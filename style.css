@@ -1250,15 +1250,18 @@ svg path {
   overflow: hidden;
   padding-bottom: 2rem;
 }
-.nav-link {
+.nav-link,
+.link-contact {
   color: #bbb;
   font-size: 1.5rem;
   text-decoration: none;
   position: relative;
   padding-bottom: 0.5rem;
   transition: color 0.3s ease;
+  display: inline-block;
 }
-.nav-link::before {
+.nav-link::before,
+.link-contact::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -1269,13 +1272,19 @@ svg path {
   transform: translateX(-150%);
   transition: transform 0.3s ease;
 }
-.nav-link:hover {
+.link-contact::before {
+  width: 50%;
+}
+.nav-link:hover,
+.link-contact:hover {
   color: #fff;
 }
-.nav-link:hover svg path {
+.nav-link:hover svg path,
+.link-contact:hover svg path {
   stroke: #fff;
 }
-.nav-link:hover::before {
+.nav-link:hover::before,
+.link-contact:hover::before {
   transform: translate(0);
 }
 .info--box {
@@ -1288,11 +1297,11 @@ svg path {
 .info--box p {
   line-height: 1.8;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.info--box p svg {
-  height: 40px;
-  width: 40px;
-}
+
 .info--box svg {
   width: 25px;
   height: 25px;
