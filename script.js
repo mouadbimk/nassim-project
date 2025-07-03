@@ -332,7 +332,7 @@ class Carousel {
   updateItemsPerShow() {
     const items = this.items;
     for (let item of items) {
-      item.style.flex = `0 0 calc((100% / ${this.itemShow}) - 1.5rem)`;
+      item.style.flex = `0 0 calc(${100 / this.itemShow}%)`;
     }
   }
   init() {
