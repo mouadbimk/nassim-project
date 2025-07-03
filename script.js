@@ -13,30 +13,32 @@ class Slider {
     interval = 5000,
     autoPlay = true,
   }) {
-    this.container =
-      typeof container === 'string'
-        ? document.querySelector(container)
-        : container;
-    this.nextBtn =
-      typeof nextBtn === 'string'
-        ? this.container.querySelector(nextBtn)
-        : nextBtn;
-    this.prevBtn =
-      typeof prevBtn === 'string'
-        ? this.container.querySelector(prevBtn)
-        : prevBtn;
-    this.dotsContainer =
-      typeof dotsContainer === 'string'
-        ? this.container.querySelector(dotsContainer)
-        : dotsContainer;
-    this.slides = this.container.querySelectorAll('.slide');
-    this.curSlide = 0;
-    this.maxSlide = this.slides.length;
-    this.intervalTime = interval;
-    this.autoPlay = autoPlay;
-    this.autoChange = null;
-    this.timeoutId = null;
-    this.init();
+    if (document.querySelector(container)) {
+      this.container =
+        typeof container === 'string'
+          ? document.querySelector(container)
+          : container;
+      this.nextBtn =
+        typeof nextBtn === 'string'
+          ? this.container.querySelector(nextBtn)
+          : nextBtn;
+      this.prevBtn =
+        typeof prevBtn === 'string'
+          ? this.container.querySelector(prevBtn)
+          : prevBtn;
+      this.dotsContainer =
+        typeof dotsContainer === 'string'
+          ? this.container.querySelector(dotsContainer)
+          : dotsContainer;
+      this.slides = this.container.querySelectorAll('.slide');
+      this.curSlide = 0;
+      this.maxSlide = this.slides.length;
+      this.intervalTime = interval;
+      this.autoPlay = autoPlay;
+      this.autoChange = null;
+      this.timeoutId = null;
+      this.init();
+    }
   }
   _goToSlide(slide) {
     this.slides.forEach((s, i) => {
@@ -127,7 +129,7 @@ class Slider {
     this._startAutoChange();
   }
 }
-// slider();
+
 const mainSlider = new Slider({
   container: '.slider',
   nextBtn: '.btn-slider--left',
@@ -136,6 +138,7 @@ const mainSlider = new Slider({
 });
 
 // create carousel
+
 class Carousel {
   constructor({
     sliderTrack,
@@ -147,26 +150,28 @@ class Carousel {
     autoPlay = false,
     autoPlayDelay,
   }) {
-    this.sliderTrack =
-      typeof sliderTrack === 'string'
-        ? document.querySelector(sliderTrack)
-        : sliderTrack;
-    this.nextBtn =
-      typeof nextBtn === 'string' ? document.querySelector(nextBtn) : nextBtn;
-    this.prevBtn =
-      typeof prevBtn === 'string' ? document.querySelector(prevBtn) : prevBtn;
-    this.dotsContainer =
-      typeof dotsContainer === 'string'
-        ? document.querySelector(dotsContainer)
-        : dotsContainer;
-    this.itemPerSlide = itemPerSlide || 1;
-    this.itemShow = itemShow || 3;
-    this.items = this.sliderTrack.children;
-    this.totalSlides = this.items.length - this.itemShow + 1;
-    this.currentSlide = 0;
-    this.autoPlay = autoPlay;
-    this.autoPlayDelay = autoPlayDelay;
-    this.init();
+    if (document.querySelector(sliderTrack)) {
+      this.sliderTrack =
+        typeof sliderTrack === 'string'
+          ? document.querySelector(sliderTrack)
+          : sliderTrack;
+      this.nextBtn =
+        typeof nextBtn === 'string' ? document.querySelector(nextBtn) : nextBtn;
+      this.prevBtn =
+        typeof prevBtn === 'string' ? document.querySelector(prevBtn) : prevBtn;
+      this.dotsContainer =
+        typeof dotsContainer === 'string'
+          ? document.querySelector(dotsContainer)
+          : dotsContainer;
+      this.itemPerSlide = itemPerSlide || 1;
+      this.itemShow = itemShow || 3;
+      this.items = this.sliderTrack.children;
+      this.totalSlides = this.items.length - this.itemShow + 1;
+      this.currentSlide = 0;
+      this.autoPlay = autoPlay;
+      this.autoPlayDelay = autoPlayDelay;
+      this.init();
+    }
   }
   _goToSlide(slide) {
     this.currentSlide = slide;
@@ -424,7 +429,6 @@ const navHeight = nav.getBoundingClientRect().height;
 const observer = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
-  rootMargin: `-${navHeight}px`,
 });
 observer.observe(document.querySelector('.header'));
 
@@ -445,90 +449,173 @@ sectionsEl.forEach(section => {
   sectionObserver.observe(section);
   section.classList.add('section-hidden');
 });
+// event change product list
+// Products Box
+const changeProductsBox = function () {
+  const boxProducts = document.querySelector('.products-box--products');
 
-// Lazy Load Image
-const allImages = document.querySelectorAll('.features__img');
-const lazyImage = function (entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    // replace src with
-    entry.target.src = entry.target.dataset.src;
-    // remove blur effect
-    entry.target.addEventListener('load', function () {
-      entry.target.classList.remove('lazy-img');
-    });
-    observer.unobserve(entry.target);
+  if (!boxProducts) return;
+  const products = [
+    {
+      id: 1,
+      title: 'Filter Water',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+      imageMain: {
+        compresse: './images/compressed/filtrage-min.jpg',
+        origin: './images/filtrage.jpg',
+        alt: 'Image 4 filter water',
+      },
+      model: 2025,
+      status: 'New',
+      tags: ['Filtrage', 'Pompage'],
+    },
+    {
+      id: 2,
+      title: 'Chart Material',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+      imageMain: {
+        compresse: './images/compressed/chart_material-min.jpg',
+        origin: './images/chart_material.jpg',
+        alt: 'Image Chart Material',
+      },
+      model: 2024,
+      status: 'New',
+      tags: ['Equipment'],
+    },
+    {
+      id: 3,
+      title: 'blood sugar meter',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+      imageMain: {
+        compresse: './images/compressed/blood-suger-meter-min.jpg',
+        origin: './images/blood-suger-meter.jpg',
+        alt: 'Image Blood Suger meter',
+      },
+      model: 2025,
+      status: 'Popular',
+      tags: ['Pompage'],
+    },
+    {
+      id: 4,
+      title: 'panneau solaire',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+      imageMain: {
+        compresse: './images/compressed/pompage-min.jpg',
+        origin: './images/pompage.jpg',
+        alt: 'image water',
+      },
+      model: 2025,
+      status: 'New',
+      tags: ['Energie'],
+    },
+    {
+      id: 4,
+      title: 'Installation Pompe Piscine',
+      description:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+      imageMain: {
+        compresse: './images/compressed/pompage-min.jpg',
+        origin: './images/pompage.jpg',
+        alt: 'image water',
+      },
+      model: 2025,
+      status: 'New',
+      tags: ['Energie', 'Pompage'],
+    },
+  ];
+  const product = function (item) {
+    const product = `
+          <article class="product animate-on-insert">
+                <div class="tags">
+                  <span class="product-model">${item.model}</span>
+                  <span class="product-status ${item.status.toLowerCase()}">${item.status.toUpperCase()}</span>
+                  <span class="product-status tag">${item.tags[0]}</span>
+                </div>
+                <div class="product-img">
+                  <img
+                    class="features__img lazy-img"
+                    src="${item.imageMain.compresse}"
+                    alt="Image 4 filter water"
+                    data-src="${item.imageMain.origin}"
+                  />
+                </div>
+                <div class="content-product">
+                  <h4 class="product-title">${item.title}</h4>
+                  <p class="product-des">
+                    ${item.description}
+                  </p>
+                </div>
+                <div class="overlay-product"></div>
+                <button class="btn btn--product">Buy Now</button>
+              </article>
+        `;
+    return product;
+  };
+  boxProducts.innerHTML = '';
+  products.forEach(item => {
+    boxProducts.insertAdjacentHTML('beforeend', product(item));
+  });
+  const btnsProducts = document.querySelector('.products--box-buttons');
+  btnsProducts.addEventListener('click', function (e) {
+    if (!e.target.classList.contains('product-button')) return;
+    const btn = e.target;
+    boxProducts.innerHTML = '';
+    let filtredProducts = [];
+    let filter = e.target.dataset.tag;
+    document
+      .querySelectorAll('.product-button')
+      .forEach(btn => btn.classList.remove('active'));
+    btn.classList.toggle('active', btn.dataset.tag === filter);
+    if (filter === 'all') filtredProducts = products;
+    else {
+      filter = filter.charAt(0).toUpperCase() + filter.slice(1);
+      filtredProducts = products.filter(p => p.tags.includes(filter));
+    }
+    if (filtredProducts.length === 0) {
+      boxProducts.insertAdjacentHTML(
+        'beforeend',
+        '<p class="no-product">Not Products Found?</p>'
+      );
+    } else {
+      filtredProducts.forEach(item => {
+        boxProducts.insertAdjacentHTML('beforeend', product(item));
+      });
+      lazyImageLoad();
+    }
   });
 };
-const ImageObserver = new IntersectionObserver(lazyImage, {
-  root: null,
-  threshold: 1,
-});
-allImages.forEach(img => {
-  ImageObserver.observe(img);
-});
-// Product
-const products = [
-  {
-    id: 1,
-    title: 'Filter Water',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-    imageMain: '',
-    model: 2025,
-    status: 'New',
-    tags: ['Filtrage', 'Pompage'],
-  },
-  {
-    id: 2,
-    title: 'Chart Material',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-    imageMain: '',
-    model: 2024,
-    status: 'New',
-    tags: ['Equipment'],
-  },
-  {
-    id: 3,
-    title: 'blood sugar meter',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-    imageMain: '',
-    model: 2025,
-    status: 'Popular',
-    tags: ['Pompage'],
-  },
-  {
-    id: 4,
-    title: 'panneau solaire',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-    imageMain: '',
-    model: 2025,
-    status: 'New',
-    tags: ['Energie'],
-  },
-  {
-    id: 4,
-    title: 'Installation Pompe Piscine',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-    imageMain: '',
-    model: 2025,
-    status: 'New',
-    tags: ['Energie', 'Pompage'],
-  },
-];
-const btnsProducts = document.querySelector('.products--box-buttons');
-btnsProducts.addEventListener('click', function (e) {
-  if (!e.target.classList.contains('product-button')) return;
-  let filter = e.target.dataset.tag;
-  filter = filter.charAt(0).toUpperCase() + filter.slice(1);
-  const productsTag = products.filter(p => p.tags.includes(filter));
-  console.log(productsTag);
-});
 
+// Lazy Load Image
+const lazyImageLoad = function () {
+  const allImages = document.querySelectorAll('.lazy-img');
+  const lazyImage = function (entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      // replace src with
+      entry.target.src = entry.target.dataset.src;
+      // remove blur effect
+      entry.target.addEventListener('load', function () {
+        entry.target.classList.remove('lazy-img');
+      });
+      observer.unobserve(entry.target);
+    });
+  };
+  const ImageObserver = new IntersectionObserver(lazyImage, {
+    root: null,
+    threshold: 1,
+  });
+  allImages.forEach(img => {
+    ImageObserver.observe(img);
+  });
+};
+const init = function () {
+  changeProductsBox();
+  lazyImageLoad();
+};
 // carousel project
 const sliderProject = new Carousel({
   sliderTrack: '.slider-projects',
@@ -547,3 +634,4 @@ const partenarSlide = new CarouselInfinity({
   autoPlay: true,
   autoPlayDelay: 4000,
 });
+init();
