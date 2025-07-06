@@ -359,9 +359,11 @@ class CarouselInfinity extends Carousel {
       autoPlay: true,
       autoPlayDelay: 4000,
     });
-    this._cloneItems();
-    this.currentSlide = this.itemShow;
-    this._updateSlider();
+    if (document.querySelector(sliderTrack)) {
+      this._cloneItems();
+      this.currentSlide = this.itemShow;
+      this._updateSlider();
+    }
   }
   _cloneItems() {
     const itemsArray = Array.from(this.items);
