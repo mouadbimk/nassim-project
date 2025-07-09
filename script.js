@@ -4,6 +4,132 @@ const nav = document.querySelector('.nav');
 const yearEl = document.querySelector('.year');
 const date = new Date();
 yearEl.textContent = date.getFullYear();
+
+// test products
+const products = [
+  {
+    id: 1,
+    title: 'Filter Water',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+    imageMain: {
+      compresse: './images/compressed/filtrage-min.jpg',
+      origin: './images/filtrage.jpg',
+      alt: 'Image 4 filter water',
+    },
+    model: 2025,
+    status: 'New',
+    tags: ['Filtrage', 'Pompage'],
+  },
+  {
+    id: 2,
+    title: 'Chart Material',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+    imageMain: {
+      compresse: './images/compressed/chart_material-min.jpg',
+      origin: './images/chart_material.jpg',
+      alt: 'Image Chart Material',
+    },
+    model: 2024,
+    status: 'New',
+    tags: ['Equipment'],
+  },
+  {
+    id: 3,
+    title: 'blood sugar meter',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+    imageMain: {
+      compresse: './images/compressed/blood-suger-meter-min.jpg',
+      origin: './images/blood-suger-meter.jpg',
+      alt: 'Image Blood Suger meter',
+    },
+    model: 2025,
+    status: 'Popular',
+    tags: ['Pompage'],
+  },
+  {
+    id: 4,
+    title: 'panneau solaire',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+    imageMain: {
+      compresse: './images/compressed/pompage-min.jpg',
+      origin: './images/pompage.jpg',
+      alt: 'image water',
+    },
+    model: 2025,
+    status: 'New',
+    tags: ['Energie'],
+  },
+  {
+    id: 4,
+    title: 'Installation Pompe Piscine',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
+    imageMain: {
+      compresse: './images/compressed/pompage-min.jpg',
+      origin: './images/pompage.jpg',
+      alt: 'image water',
+    },
+    model: 2025,
+    status: 'New',
+    tags: ['Energie', 'Pompage'],
+  },
+];
+const productsPage = [
+  {
+    id: 1,
+    title: 'Blood sugar measure High quality',
+    imageMain: {
+      compresse: './images/compressed/blood-suger-meter-min.jpg',
+      origin: './images/blood-suger-meter.jpg',
+      alt: 'Blood sugar measure High quality',
+    },
+    tags: ['Matrials'],
+  },
+  {
+    id: 2,
+    title: 'STATION DE DEMINERALISATION JRAIFIA',
+    imageMain: {
+      compresse: './images/compressed/chart_material-min.jpg',
+      origin: './images/chart_material.jpg',
+      alt: 'STATION DE DEMINERALISATION JRAIFIA',
+    },
+    tags: ['Matrials'],
+  },
+  {
+    id: 3,
+    title: 'STATION DE traitement Water',
+    imageMain: {
+      compresse: './images/compressed/filtrage-min.jpg',
+      origin: './images/filtrage.jpg',
+      alt: 'STATION DE traitement Water',
+    },
+    tags: ['filtrage', 'Pompage'],
+  },
+  {
+    id: 4,
+    title: 'Installation Scanner Colonoghraphy',
+    imageMain: {
+      compresse: './images/compressed/hospital room-min.jpg',
+      origin: './images/hospital room.jpg',
+      alt: 'Installation Scanner Colonoghraphy',
+    },
+    tags: ['matrials', 'medical'],
+  },
+  {
+    id: 5,
+    title: 'Installation kidney filtration device',
+    imageMain: {
+      compresse: './images/compressed/kednly-min.jpg',
+      origin: './images/kednly.jpg',
+      alt: 'Installation kidney filtration device',
+    },
+    tags: ['matrials', 'medical'],
+  },
+];
 class Slider {
   constructor({
     container,
@@ -451,84 +577,14 @@ sectionsEl.forEach(section => {
   sectionObserver.observe(section);
   section.classList.add('section-hidden');
 });
+
 // event change product list
 // Products Box
 const changeProductsBox = function () {
   const boxProducts = document.querySelector('.products-box--products');
 
   if (!boxProducts) return;
-  const products = [
-    {
-      id: 1,
-      title: 'Filter Water',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-      imageMain: {
-        compresse: './images/compressed/filtrage-min.jpg',
-        origin: './images/filtrage.jpg',
-        alt: 'Image 4 filter water',
-      },
-      model: 2025,
-      status: 'New',
-      tags: ['Filtrage', 'Pompage'],
-    },
-    {
-      id: 2,
-      title: 'Chart Material',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-      imageMain: {
-        compresse: './images/compressed/chart_material-min.jpg',
-        origin: './images/chart_material.jpg',
-        alt: 'Image Chart Material',
-      },
-      model: 2024,
-      status: 'New',
-      tags: ['Equipment'],
-    },
-    {
-      id: 3,
-      title: 'blood sugar meter',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-      imageMain: {
-        compresse: './images/compressed/blood-suger-meter-min.jpg',
-        origin: './images/blood-suger-meter.jpg',
-        alt: 'Image Blood Suger meter',
-      },
-      model: 2025,
-      status: 'Popular',
-      tags: ['Pompage'],
-    },
-    {
-      id: 4,
-      title: 'panneau solaire',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-      imageMain: {
-        compresse: './images/compressed/pompage-min.jpg',
-        origin: './images/pompage.jpg',
-        alt: 'image water',
-      },
-      model: 2025,
-      status: 'New',
-      tags: ['Energie'],
-    },
-    {
-      id: 4,
-      title: 'Installation Pompe Piscine',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta error, voluptatum necessitatibus maiores voluptates nostrum voluptas architecto et ullam dolorem accusantium excepturi? Vero commodi repellendus incidunt ad quos officia tempora.',
-      imageMain: {
-        compresse: './images/compressed/pompage-min.jpg',
-        origin: './images/pompage.jpg',
-        alt: 'image water',
-      },
-      model: 2025,
-      status: 'New',
-      tags: ['Energie', 'Pompage'],
-    },
-  ];
+
   const product = function (item) {
     const product = `
           <article class="product animate-on-insert">
@@ -617,6 +673,7 @@ const lazyImageLoad = function () {
 const init = function () {
   changeProductsBox();
   lazyImageLoad();
+  filterItems();
 };
 // carousel project
 const sliderProject = new Carousel({
@@ -636,4 +693,65 @@ const partenarSlide = new CarouselInfinity({
   autoPlay: true,
   autoPlayDelay: 4000,
 });
+const filterItems = function () {
+  const filterContainer = document.querySelector('.box-filter');
+  const boxContainer = document.querySelector('.cards-project');
+  let pro = function (item) {
+    const product = `
+    <div class="card-project">
+                <div class="image-card">
+                  <img src="${item.imageMain.compresse}" class="card-img" alt="${item.imageMain.alt}" data-src="${item.imageMain.origin}">
+                </div>
+                <div class="content-card">
+                  <h3 class="tag-card">${item.tags[0]}</h3>
+                  <h2 class="title-project">
+                    ${item.title}
+                  </h2>
+                </div>
+                <button class="btn-project">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+                  </svg>
+                </button>
+              </div>
+    `;
+    return product;
+  };
+  filterContainer.addEventListener('click', e => {
+    const item = e.target.closest('.filter-item');
+    boxContainer.innerHTML = '';
+    if (!item) return;
+    let filterProducts = [];
+    document
+      .querySelectorAll('.filter-item')
+      .forEach(it => it.classList.remove('active'));
+    const { filter } = item.dataset;
+
+    item.classList.toggle('active', filter);
+    if (filter === 'all') {
+      filterProducts = productsPage;
+    } else {
+      filterProducts = productsPage.filter(
+        product =>
+          product.tags.includes(filter[0].toUpperCase() + filter.slice(1)) ||
+          product.tags.includes(filter)
+      );
+    }
+
+    if (filterProducts.length != 0) {
+      filterProducts.forEach(item =>
+        boxContainer.insertAdjacentHTML('beforeend', pro(item))
+      );
+      lazyImageLoad();
+    } else {
+      boxContainer.insertAdjacentHTML(
+        'beforeend',
+        '<p class="no-product">Not Project Found?</p>'
+      );
+    }
+  });
+  productsPage.forEach(product => {
+    boxContainer.insertAdjacentHTML('beforeend', pro(product));
+  });
+};
 init();
