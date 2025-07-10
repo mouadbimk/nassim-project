@@ -117,139 +117,195 @@
     <section class="section" id="page-header">
       <div class="page-header--img">
         <img
-          src="./images/banners/services.jpg"
+          src="./images/filtrage.jpg"
           alt="Main image of company"
           class="page-about-img"
-          style="object-position: 0 50%"
+          style="object-position: 0 16%"
         />
       </div>
       <div class="container main-content-header">
         <div class="page-header__inner">
-          <h3 class="header-title">Our Services</h3>
+          <h3 class="header-title">Service Title Test</h3>
           <div class="breadcrumb__box">
             <ul class="breadcrumb__list">
               <li><a href="./index.html">Accueil</a></li>
               <li><span>/</span></li>
-              <li>Services</li>
+              <li><a href="./services.html">Services</a></li>
+              <li><span>/</span></li>
+              <li>Service Title Test</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <!-- section contact -->
-    <section class="section" id="content-page">
+    <!-- section content -->
+    <section class="section" id="pageContent">
       <div class="container">
-        <div class="boxes services-page">
-          <div class="card">
-            <div class="card-img">
+        <div class="boxes servicePage">
+          <div class="sideBar">
+            <ul class="otherServices">
+              <li class="service active">
+                <a href="#">Water Treatment</a> <span>&rightarrow;</span>
+              </li>
+              <li class="service">
+                <a href="#">Installation Equipment</a> <span>&rightarrow;</span>
+              </li>
+              <li class="service">
+                <a href="#">Filtration & pumping </a> <span>&rightarrow;</span>
+              </li>
+              <li class="service">
+                <a href="#">Solar Panel</a> <span>&rightarrow;</span>
+              </li>
+              <li class="service">
+                <a href="#">Reparation Electric Machines</a>
+                <span>&rightarrow;</span>
+              </li>
+            </ul>
+            <div class="card-phone">
+              <div class="icon-card">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                  />
+                </svg>
+              </div>
+              <h2 class="title-card">You can contact us at any time</h2>
+              <h4 class="second-title-card">Contact Any time</h4>
+              <a href="tel:0500000000" class="number-card"
+                >+212 (0) 5 000-0000</a
+              >
+            </div>
+          </div>
+          <div class="mainContent">
+            <div class="mainImage">
               <img
-                class="features__img lazy-img"
                 src="./images/compressed/filtrage-min.jpg"
-                alt="Image Machine filter kednly"
+                alt="Main Image Of Service"
+                class="lazy-img"
                 data-src="./images/filtrage.jpg"
               />
+              <h2 class="title-post">
+                purification and reuse of wastewater treatment
+              </h2>
             </div>
-            <div class="card-content">
-              <span class="tag">Filtration</span>
-              <h3 class="card-title">
-                <a href="./pageService.html">Installation Filter Water</a>
-              </h3>
-              <p class="card-para">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Suscipit dicta consectetur accusantium maiores optio autem vero
-                voluptas, quasi inventore eveniet ipsa? Eaque quae soluta ad.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img
-                class="features__img lazy-img"
-                src="./images/compressed/hospital room-min.jpg"
-                alt="Image Hospital Room"
-                data-src="./images/hospital room.jpg"
-              />
-              <div class="card-blur"></div>
-            </div>
-            <div class="card-content">
-              <span class="tag">Reparation</span>
-              <h3 class="card-title">
-                <a href="./pageService.html">Reparation Electric Machines</a>
-              </h3>
-              <p class="card-para">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Suscipit dicta consectetur accusantium maiores optio autem vero
-                voluptas, quasi inventore eveniet ipsa? Eaque quae soluta ad.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img
-                class="features__img lazy-img"
-                src="./images/compressed/sirom-min.jpg"
-                alt="Image Sirom"
-                data-src="./images/sirom.jpg"
-              />
-            </div>
-            <div class="card-content">
-              <span class="tag">Installation</span>
-              <h3 class="card-title">
-                <a href="./pageService.html">Installation Machines Medical</a>
-              </h3>
-              <p class="card-para">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Suscipit dicta consectetur accusantium maiores optio autem vero
-                voluptas, quasi inventore eveniet ipsa? Eaque quae soluta ad.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img
-                class="features__img lazy-img"
-                src="./images/compressed/chart_material-min.jpg"
-                alt="Image Chart Material"
-                data-src="./images/chart_material.jpg"
-              />
-            </div>
-            <div class="card-content">
-              <span class="tag">Controller</span>
-              <h3 class="card-title">
-                <a href="./pageService.html">Controller All Machines</a>
-              </h3>
-              <p class="card-para">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Suscipit dicta consectetur accusantium maiores optio autem vero
-                voluptas, quasi inventore eveniet ipsa? Eaque quae soluta ad.
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-img">
-              <img
-                class="features__img lazy-img"
-                src="./images/compressed/enrgie renovanble-min.jpg"
-                alt="Image for technicien install solar panel"
-                data-src="./images/enrgie renovanble.jpg"
-              />
-            </div>
-            <div class="card-content">
-              <span class="tag">Energie Renovable</span>
-              <h3 class="card-title">
-                <a href="./pageService.html">Installation solar panel</a>
-              </h3>
-              <p class="card-para">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Suscipit dicta consectetur accusantium maiores optio autem vero
-                voluptas, quasi inventore eveniet ipsa? Eaque quae soluta ad.
-              </p>
-            </div>
+            <p class="para-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              voluptate, placeat sint et aliquid officiis quae dolorum itaque
+              suscipit necessitatibus doloremque delectus, corporis molestias
+              excepturi cupiditate illum earum. Magni, earum?
+            </p>
+            <ul class="list-propos">
+              <li class="item-propos">
+                <span class="icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m16.49 12 3.75 3.75m0 0-3.75 3.75m3.75-3.75H3.74V4.499"
+                    />
+                  </svg>
+                </span>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Impedit, fugiat.
+                </p>
+              </li>
+              <li class="item-propos">
+                <span class="icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m16.49 12 3.75 3.75m0 0-3.75 3.75m3.75-3.75H3.74V4.499"
+                    />
+                  </svg>
+                </span>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Impedit, fugiat.
+                </p>
+              </li>
+              <li class="item-propos">
+                <span class="icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m16.49 12 3.75 3.75m0 0-3.75 3.75m3.75-3.75H3.74V4.499"
+                    />
+                  </svg>
+                </span>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Impedit, fugiat.
+                </p>
+              </li>
+              <li class="item-propos">
+                <span class="icon"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m16.49 12 3.75 3.75m0 0-3.75 3.75m3.75-3.75H3.74V4.499"
+                    />
+                  </svg>
+                </span>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Impedit, fugiat.
+                </p>
+              </li>
+            </ul>
+            <blockquote class="quotation">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Doloribus reprehenderit voluptas, quae aliquid corrupti placeat
+              incidunt illum sequi in eveniet voluptatem officia aperiam maxime
+              similique quia, odit reiciendis dolorem eligendi?
+            </blockquote>
+            <a class="btn-page" href="./project.html"
+              >View Projects <span>&rightarrow;</span></a
+            >
           </div>
         </div>
       </div>
     </section>
-
     <!-- footer -->
     <div class="footer">
       <div class="section" id="footer">
