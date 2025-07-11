@@ -4,7 +4,7 @@ const nav = document.querySelector(".nav");
 const yearEl = document.querySelector(".year");
 const date = new Date();
 yearEl.textContent = date.getFullYear();
-
+const btnCloseProduct = document.querySelector(".close");
 // test products
 const products = [
   {
@@ -674,6 +674,8 @@ const init = function () {
   changeProductsBox();
   lazyImageLoad();
   filterItems();
+  checkWidth();
+  navMenuMobile();
 };
 // carousel project
 const sliderProject = new Carousel({
@@ -695,6 +697,7 @@ const partenarSlide = new CarouselInfinity({
 });
 const filterItems = function () {
   const filterContainer = document.querySelector(".box-filter");
+  if (!filterContainer) return;
   const boxContainer = document.querySelector(".cards-project");
   const loader = document.createElement("div");
   loader.className = "loader";
@@ -710,7 +713,7 @@ const filterItems = function () {
                 <div class="content-card">
                   <h3 class="tag-card">${item.tags[0]}</h3>
                   <h2 class="title-project">
-                    ${item.title}
+                   <a href="./projectPage.html">${item.title}</a> 
                   </h2>
                 </div>
                 <button class="btn-project">
@@ -774,4 +777,41 @@ const filterItems = function () {
     }, 100 * timer);
   });
 };
+const closeMenuProduct = function () {
+  const productContainer = document.querySelector(".products--boxes");
+  if (!productContainer) return;
+  const buttonsContainer = productContainer.querySelector(
+    ".buttons-productSection"
+  );
+  productContainer.classList.toggle("close-product");
+  buttonsContainer.classList.toggle("hidden");
+};
+btnCloseProduct.addEventListener("click", closeMenuProduct);
+
+const navMenuMobile = function () {
+  const open = document.querySelector(".openbtn");
+  const close = document.querySelector(".closebtn");
+  const navContainer = document.querySelector(".nav__links");
+  open.addEventListener("click", () => {
+    navContainer.classList.toggle("showMenu");
+    navContainer.classList.contains("showMenu")
+      ? (open.innerHTML = "&#10006;")
+      : (open.innerHTML = "&#9776;");
+  });
+};
+const checkWidth = function () {
+  const productContainer = document.querySelector(".products--boxes");
+  if (!productContainer) return;
+  const buttonsContainer = productContainer.querySelector(
+    ".buttons-productSection"
+  );
+  if (window.innerWidth < 1200) {
+    productContainer.classList.add("close-product");
+    buttonsContainer.classList.add("hidden");
+  } else {
+    productContainer.classList.remove("close-product");
+    buttonsContainer.classList.remove("hidden");
+  }
+};
+window.addEventListener("resize", checkWidth);
 init();
