@@ -13,7 +13,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 body {
   height: 100vh;
@@ -22,6 +22,7 @@ body {
   background-color: var(--color-soft-gray);
   line-height: 1.4;
   position: relative;
+  overflow-x: hidden;
 }
 
 .header {
@@ -396,7 +397,7 @@ a:active {
   left: 20px;
   cursor: pointer;
   opacity: 0;
-  visibility: 0;
+  visibility: hidden;
   transition: all 0.4s ease;
 }
 .close-product {
@@ -2718,6 +2719,12 @@ a:active {
     opacity: 1;
     visibility: visible;
   }
+  .breadcrumb__box {
+    right: 20%;
+  }
+  .header-title {
+    padding-top: 8rem;
+  }
 }
 @media (max-width: 910px) {
   .nav {
@@ -2738,7 +2745,8 @@ a:active {
   .mobile-menu {
     z-index: 100000;
     opacity: 1;
-    left: 93%;
+    visibility: visible;
+    left: 90%;
   }
   .mobile-menu.openbtn {
     top: 50%;
@@ -2760,14 +2768,22 @@ a:active {
   .container {
     max-width: 100%;
   }
-  .cta {
+  .cta,
+  .servicePage {
     grid-template-columns: 1fr;
+    row-gap: 2rem;
   }
   .cta-img-box {
     height: 20rem;
   }
   .cta-img-box img {
     object-position: center 30%;
+  }
+  .services-page {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services-page div:last-child {
+    grid-column: 1 / -1;
   }
 }
 @media (max-width: 650px) {
@@ -2777,6 +2793,18 @@ a:active {
     grid-template-areas:
       "image"
       "content";
+  }
+  #partenar .heading {
+    padding: 1.2rem 2rem;
+  }
+  #partenar .heading::before {
+    right: -85%;
+  }
+  #partenar .heading::after {
+    left: -85%;
+  }
+  .slider-container {
+    padding: 1rem;
   }
   .our-service--3 {
     grid-column: 1;
@@ -2815,8 +2843,20 @@ a:active {
   .footer--boxes {
     grid-template-columns: 1fr;
   }
+  .header-title {
+    margin-bottom: 3rem;
+  }
+  .breadcrumb__list {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+  }
+  .services-page {
+    grid-template-columns: 1fr;
+  }
   .section {
-    margin-top: 0rem;
+    margin-top: 3rem;
   }
   .static-boxes {
     grid-template-columns: 1fr 1fr;
@@ -2892,9 +2932,15 @@ a:active {
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 376px) {
   .static-boxes {
     grid-template-columns: 1fr;
+  }
+  .pro__slide {
+    flex: 0 0 100% !important;
+  }
+  .features-boxes {
+    grid-template-columns: 35rem;
   }
 }
 .close-product {

@@ -570,8 +570,8 @@ const revealSection = function (entries, observer) {
 };
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.4,
-  rootMargin: "200px",
+  threshold: 0.2,
+  rootMargin: "200px 0px 0px 0px",
 });
 sectionsEl.forEach((section) => {
   sectionObserver.observe(section);
@@ -664,7 +664,7 @@ const lazyImageLoad = function () {
   };
   const ImageObserver = new IntersectionObserver(lazyImage, {
     root: null,
-    threshold: 1,
+    threshold: 0.7,
   });
   allImages.forEach((img) => {
     ImageObserver.observe(img);
@@ -786,11 +786,13 @@ const closeMenuProduct = function () {
   productContainer.classList.toggle("close-product");
   buttonsContainer.classList.toggle("hidden");
 };
-btnCloseProduct.addEventListener("click", closeMenuProduct);
+if (btnCloseProduct) {
+  btnCloseProduct.addEventListener("click", closeMenuProduct);
+}
 
 const navMenuMobile = function () {
   const open = document.querySelector(".openbtn");
-  const close = document.querySelector(".closebtn");
+  if (!open) return;
   const navContainer = document.querySelector(".nav__links");
   open.addEventListener("click", () => {
     navContainer.classList.toggle("showMenu");
