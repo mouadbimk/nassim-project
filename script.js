@@ -679,6 +679,7 @@ const init = function () {
   checkWidth();
   navMenuMobile();
   animateCounters();
+  goToForm();
 };
 // carousel project
 const sliderProject = new Carousel({
@@ -849,6 +850,16 @@ const animateCounters = function () {
     });
   }, options);
   observer.observe(boxes);
+};
+const goToForm = function () {
+  const btns = document.querySelectorAll(".btn--product");
+  const form = document.querySelector("#contact");
+  // if (!btns || !form) return;
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
 };
 window.addEventListener("resize", checkWidth);
 init();
