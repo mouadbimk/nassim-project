@@ -186,7 +186,9 @@ class Slider {
     this.dotsContainer.innerHTML = "";
     this.slides.forEach((_, i) => {
       const dot = document.createElement("button");
+
       dot.classList.add("dots__dot");
+      dot.ariaLabel = "dot-slider";
       dot.dataset.slide = i;
       this.dotsContainer.appendChild(dot);
     });
@@ -676,6 +678,7 @@ const init = function () {
   filterItems();
   checkWidth();
   navMenuMobile();
+  animateCounters();
 };
 // carousel project
 const sliderProject = new Carousel({
@@ -814,6 +817,38 @@ const checkWidth = function () {
     productContainer.classList.remove("close-product");
     buttonsContainer.classList.remove("hidden");
   }
+};
+const animateCounters = function () {
+  const counters = document.querySelectorAll(".title-static");
+  const boxes = document.querySelector(".static-boxes");
+  if (!counters || !boxes) return;
+  const options = {
+    root: null,
+    threshold: 0.5,
+  };
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        counters.forEach((count) => {
+          const target = +count.dataset.target;
+          const speed = 300;
+          const updateCount = () => {
+            const current = +count.innerText;
+            const increment = target / speed;
+            if (current < target) {
+              count.innerText = Math.ceil(current + increment);
+              requestAnimationFrame(updateCount);
+            } else {
+              count.innerText = target + "+";
+            }
+          };
+          updateCount();
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+  observer.observe(boxes);
 };
 window.addEventListener("resize", checkWidth);
 init();
