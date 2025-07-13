@@ -3,7 +3,9 @@ const sectionsEl = document.querySelectorAll(".section");
 const nav = document.querySelector(".nav");
 const yearEl = document.querySelector(".year");
 const date = new Date();
-yearEl.textContent = date.getFullYear();
+if (yearEl) {
+  yearEl.textContent = date.getFullYear();
+}
 const btnCloseProduct = document.querySelector(".close");
 // test products
 const products = [
@@ -555,12 +557,13 @@ const stickyNav = function (entries) {
   if (!entry.isIntersecting) nav.classList.add("sticky");
   else nav.classList.remove("sticky");
 };
-const navHeight = nav.getBoundingClientRect().height;
-const observer = new IntersectionObserver(stickyNav, {
-  root: null,
-  threshold: 0,
-});
-observer.observe(document.querySelector(".header"));
+if (nav) {
+  const observer = new IntersectionObserver(stickyNav, {
+    root: null,
+    threshold: 0,
+  });
+  observer.observe(document.querySelector(".header"));
+}
 
 // Reveal Sections
 const revealSection = function (entries, observer) {
