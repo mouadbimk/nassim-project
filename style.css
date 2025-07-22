@@ -762,6 +762,7 @@ a:active {
   font-size: 1.3rem;
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2023,8 +2024,7 @@ a:active {
   height: 100%;
 }
 /* PROJECTS PAGE */
-#content-page {
-}
+
 .projects-page {
   grid-template-columns: 25rem 1fr;
   column-gap: 3rem;
@@ -2696,6 +2696,92 @@ a:active {
 .link-side.active {
   background-color: #125492;
 }
+/* Login Page */
+#pageLogin {
+  border-bottom: none;
+  margin-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+#pageLogin .cta {
+  grid-template-columns: 1.5fr 2fr;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+#pageLogin .cta-form {
+  padding: 2rem;
+  grid-template-columns: 1fr;
+}
+.rememberMe {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  align-items: center;
+  font-size: 1.4rem;
+}
+.rememberMe input {
+  width: 30px;
+  height: auto;
+}
+.rememberMe a {
+  color: #051727;
+}
+.rememberMe input:focus {
+  box-shadow: none;
+}
+.login-btn:hover {
+  background-color: var(--color-main);
+  color: #f1f1f1;
+}
+.forget {
+  font-size: 1.4rem;
+  color: #bbb;
+  text-decoration: underline;
+  transition: color 0.4s ease;
+  width: fit-content;
+}
+.forget:hover {
+  color: #333;
+}
+.boxForms {
+  position: relative;
+}
+.homeLogin {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  position: absolute;
+  top: -8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.4s ease;
+}
+.homeLogin svg {
+  width: 30px;
+  height: 30px;
+  transition: stroke 0.4s ease;
+}
+.homeLogin:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  background-color: var(--color-main);
+}
+.homeLogin:hover svg {
+  stroke: #fff;
+}
+.twoInput {
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
 /* Responsive */
 @media (max-width: 1400px) {
   .breadcrumb__box {
@@ -2850,7 +2936,8 @@ a:active {
   }
 
   .cta,
-  .servicePage {
+  .servicePage,
+  #pageLogin .cta {
     grid-template-columns: 1fr;
     row-gap: 2rem;
   }
@@ -2896,6 +2983,9 @@ a:active {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  .twoInput {
+    grid-template-columns: 1fr;
+  }
   #partenar .heading {
     padding: 1.2rem 2rem;
   }
@@ -2921,6 +3011,7 @@ a:active {
   .slider .para {
     display: -webkit-box;
     -webkit-line-clamp: 8;
+    line-clamp: 8;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -2990,6 +3081,7 @@ a:active {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+    line-clamp: 1;
     text-overflow: ellipsis;
   }
   .breadcrumb__list li:nth-child(5) {

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="style.css" /></noscript>
+    <script defer src="script.js"></script>
+    <title>login page</title>
+  </head>
+  <body>
+    <section class="section" id="pageLogin">
+      <div class="container boxForms">
+        <a href="./index.html" class="homeLogin"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+            />
+          </svg>
+        </a>
+        <div class="boxes cta">
+          <div class="cta-img-box">
+            <img src="./images/company.jpg" alt="Login Cover Page" />
+          </div>
+          <div class="cta-inputs">
+            <h3 class="heading">Create Your Account</h3>
+            <h2 class="main-heading">Join Us and Get Started</h2>
+            <p class="info-form">
+              SignUp to get Access your dashboard, manage your preferences, and
+              stay connected. Your personalized experience starts here.
+            </p>
+            <form class="cta-form">
+              <div class="boxes twoInput">
+                <div>
+                  <label for="firstName">First Name</label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    placeholder="John"
+                  />
+                </div>
+                <div>
+                  <label for="lastName">Last Name</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    placeholder="Smith"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email@example.com"
+                />
+              </div>
+              <div>
+                <label for="number">Phone</label>
+                <input
+                  type="number"
+                  name="number"
+                  id="number"
+                  placeholder="+212(0) 600-0000 "
+                />
+              </div>
+              <div class="boxes twoInput">
+                <div>
+                  <label for="Password">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+                  />
+                </div>
+                <div>
+                  <label for="passwordConfirmation">Re-Password</label>
+                  <input
+                    type="password"
+                    name="passwordConfirmation"
+                    id="passwordConfirmation"
+                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+                  />
+                </div>
+              </div>
+              <div class="rememberMe">
+                <span>
+                  By registering, you agree to our
+                  <a href="#">Terms of Service</a> and
+                  <a href="#">Privacy Policy</a>.
+                </span>
+              </div>
+              <div class="forget">
+                <a href="./login.html">already have account?</a>
+              </div>
+              <button class="btn login-btn">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
